@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose')
 
-const dev_db_url = '';
+const dev_db_url = 'mongodb+srv://Diegoo11:Diegoo11@inventory.xauda.mongodb.net/inventory?retryWrites=true&w=majority';
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect( mongoDB, {useNewUrlParser: true , useUnifiedTopology: true });
 const db = mongoose.connection;
