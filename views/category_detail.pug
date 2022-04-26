@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+  h1= title 
+
+  aside  
+    article.category  
+      a.linkCategory(href=category.url)
+        img.imgCategory(src=category.img, alt="")
+        span.dentro #{category.name}
+      div.boxSpanCategory
+        span.spanCategory #{category.description}
+
+  aside.items 
+    each item in category_items
+      article.item
+        .boxImg 
+          if item.img 
+            img(src=item.img, alt="") 
+        .boxPrecio 
+          span S./ #{item.cost}
+          a.linkItem(href="") #{item.name} 
+    

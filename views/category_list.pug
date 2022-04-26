@@ -1,0 +1,16 @@
+extends layout 
+
+block content 
+  h1= title 
+
+  aside  
+    each category in categories
+      article.category  
+        a.linkCategory(href=category.url)
+          img.imgCategory(src=category.img, alt="")
+          span.dentro #{category.name}
+        div.boxSpanCategory
+          span.spanCategory #{category.description}
+    
+    else 
+      li No hay Categorias
