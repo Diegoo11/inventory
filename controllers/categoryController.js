@@ -30,7 +30,7 @@ exports.category_detail = function(req, res, next) {
       return next(err)
     }
     res.render('category_detail', {
-      title: 'Category Detail',
+      title: results.category.name,
       category: results.category,
       category_items: results.category_items
     })
