@@ -1,11 +1,6 @@
 extends layout 
 
 block content 
-  form(action="", method="post").boxRemove 
-    h1= title 
-    span.deleteText Estas seguro que quieres eliminar esta categoria?
-    input#itemid(type='hidden', name="itemid" value=category._id required=true)
-    button(type="submit").btn.btnItem Delete Item
   aside  
     article.category  
       .linkCategory
@@ -13,3 +8,22 @@ block content
         span.dentro #{category.name}
       div.boxSpanCategory
         span.spanCategory #{category.description}
+  if category_items.length > 0
+    h1 Por favor elimine todos los articulos realcionados a esta categoria.
+    aside.items 
+      each item in category_items
+        a.linkItem(href=item.url)
+          article.item
+            .boxImg 
+              if item.img 
+                img.imgItem(src=item.img, alt="") 
+            .boxPrecio 
+              span S/. #{item.cost},00
+              a.linkItem(href=item.url) #{item.name} 
+  else 
+    form(action="", method="post").boxRemove 
+      h1= title 
+      span.deleteText Estas seguro que quieres eliminar esta categoria?
+      input#categoryid(type='hidden', name="categoryid" value=category._id required=true)
+      button(type="submit").btn.btnItem Delete Item
+
