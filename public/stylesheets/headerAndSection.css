@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.link{
+  text-decoration: none;
+  color: rgb(235, 235, 235);
+}
+header{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: rgba(0,0,0,255);
+    color: rgb(87, 87, 87);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid rgb(46, 46, 46);
+    z-index: 1;
+    width: 100vw;
+}
+button::selection{
+    background-color: rgb(211, 211, 211);
+    color: black;
+}
+
+nav{
+    display: flex;
+    min-width: 355px;
+    padding-right: 20px;
+
+}
+.logo-svg{
+    fill: white;
+    filter: brightness(2);
+    filter: grayscale(1);
+    margin: 15px 20px;
+    width: 50px;
+}
+
+.list-ul {
+    width: 100%;;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    font-size: 1.1rem;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+
+    text-align: center;
+    position: relative;
+}
+li:hover{
+    color: white;
+}
+
+li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -10px;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    
+}
+
+li:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    font-weight: bold;
+}
+
+.underline{
+    position: relative;
+}
+
+.underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -10px;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.underline:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    font-weight: bold;
+}
+.underline:hover{
+    cursor: pointer;
+}
+.underlineB{
+    position: relative;
+}
+
+.underlineB:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -10px;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.underlineB:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    font-weight: bold;
+}
+.underlineB:hover{
+    cursor: pointer;
+}
+
+.section-perfil{
+    display: flex;
+    background-color: black;
+}
+
+.perfil {
+    width: 50vw;
+    max-width: 834px;
+}
+
+button{
+    border: 0;
+    background-color: transparent;
+    color: rgb(216, 216, 216);
+    font-size: 1.1rem;
+}
+
+button:hover{
+    cursor: pointer;
+    color: white;
+}
+.article-perfil{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(228, 228, 228);
+    font-size: 1.8rem;
+    padding: 50px;
+    width: 40vw;
+    max-width: 668px;
+}
+
+.article-h1{
+    font-size: 4rem;
+    margin: 0 0 30px 0;
+}
+
+.article-span{
+    text-align: center;
+    
+    line-height: 3.5rem;
+}
+.section-perfil{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+} 
+.box{
+    width: 1620px;
+    margin: 0 auto;
+    display: flex
+}
+
+
+.linkImg{
+    width: 55px;
+    margin: 4px;
+}
+
+.boxLinkImg{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 970px){
+    .article-perfil{
+        font-size: 1.5rem;
+        width: auto;
+    }
+    .linkImg{
+        transform: scale(0.85);
+    }
+}
+
+@media (max-width: 600px) {
+    header{
+        padding: 0 20px 0 0;
+    }
+    .list-ul{
+        font-size: 0.9rem;
+        gap: 10px;
+    }
+    nav{
+        min-width: 264px;
+    }
+    .logo-svg{
+        margin-left: 10px;
+        margin-right: 0;
+    }
+    .perfil{
+        width: 100vw;
+        height: 200px;
+        object-fit: cover;
+    }
+    .article-perfil{
+        font-size: 1.3rem;
+        width: 90vw;
+    }
+    .article-h1{
+        font-size: 2.5rem;
+        margin: 0 0 20px 0;
+    }
+    .article-span{
+        line-height: 2.5rem;
+        text-align: justify;
+    }
+    .linkImg{
+        width: 40px;
+        margin: 3px;
+    }
+    .boxLinkImg{
+        gap: 10px;
+    }
+}

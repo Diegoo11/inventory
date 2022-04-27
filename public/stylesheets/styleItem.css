@@ -1,0 +1,90 @@
+.boxItem{
+  width: min(1250px, 80vw);
+  border-radius: 20px;
+  background-color: rgb(243, 243, 243);
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 40px 0;
+  gap: 30px;
+}
+
+.imgItemFocus{
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  flex-grow: 1;
+  max-width: 550px;
+}
+.boxText {
+  width: 40%;
+  margin: 20px 0;
+  width: min(500px, 70vw);
+  display: flex;
+  flex-direction: column;
+}
+.itemTitle {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+.itemTitle:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.isbn{
+  color: rgb(167, 167, 167);
+  font-size: 1.4rem;
+}
+.isbn:hover{
+  color: gray;
+}
+
+.cost{
+  font-size: 1.9rem;
+  color: rgb(207, 0, 0);
+}
+
+.titleDescription {
+  font-size: 1.33rem;
+  font-weight: bold;
+  color: rgb(82, 82, 82);
+  margin-top: 40px;
+}
+
+.description{
+  font-size: 1.15rem;
+  color: rgb(82, 82, 82);
+  margin-bottom: 40px;
+}
+
+.btnBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.btnItem{
+  background-color: rgb(34, 90, 175);
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  padding: 15px 25px;
+  min-width: 120px;
+}
+
+.btn{
+  transition: all 200ms;
+}
+.btn:hover{
+  cursor: pointer;
+  transform: scale(1.03);
+}
+.linkFixed{
+  color: white;
+  text-decoration: none;
+}

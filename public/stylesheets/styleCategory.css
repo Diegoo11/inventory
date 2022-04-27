@@ -1,0 +1,61 @@
+.items{
+  width: min(1250px, 75vw);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 30px;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+
+.item{
+  width: 250px;
+  height: 335px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  transition: all 200ms;
+}
+.item:hover{
+  transform: translateY(-3px);
+}
+
+.boxPrecio{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  gap: 10px;
+  font-weight: bold;
+  color: rgb(70, 70, 70);
+  overflow: hidden;
+}
+
+.boxImg{
+  width: 220px;
+  height: 220px;
+  background-color: rgb(216, 216, 216);
+  margin: 10px 0 30px 0;
+  border-radius: 5px;
+}
+
+.linkItem{
+  text-decoration: none;
+  color: rgb(70, 70, 70);
+}
+
+.linkItem:hover{
+  text-decoration: underline;
+  color: rgb(44, 44, 44);
+}
+
+.imgItem{
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+}

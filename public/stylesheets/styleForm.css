@@ -1,0 +1,58 @@
+.formCategory {
+  background-color: rgb(202, 202, 202);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  margin: 40px 20px;
+  border-radius: 15px;
+  width: min(320px, 70vw);
+}
+.boxInput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+.titleCreate{
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.labelInput {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgb(49, 49, 49);
+}
+.inputForm {
+  border: 0;
+  outline: none;
+  width: 90%;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.inputSelect {
+  width: 96%;
+  background-color: white;
+}
+.icoEdit{
+  width: 83%;
+}
+.linkFixed{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.02rem;
+}
+textarea{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.02rem;
+}

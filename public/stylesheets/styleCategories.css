@@ -1,3 +1,4 @@
+
 .linkCategory{
   font-size: 2rem;
   text-decoration: none;
@@ -10,16 +11,18 @@
   flex-grow: 1;
 }
 body{
-  background-color: rgb(19, 19, 19);
+  background-color: rgb(216, 216, 216);
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .category{
   display: flex;
   background-color: rgb(236, 236, 236);
   border-radius: 30px;
   padding: 0;
-  margin: 100px 50px;
+  margin: 80px 50px 100px 50px;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
@@ -30,13 +33,16 @@ body{
   position: absolute;
   color: white;
   font-weight: bold;
-  top: calc(50% - 15px);
-  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+  left: calc(50% - 200px);
   font-size: 3rem;
   padding: 0;
-  width: 200px;
-  height: auto;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
   text-align: center;
+  align-items: center;
 }
 
 .imgCategory{
