@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+  form.formCategory(action="", method="post") 
+    h2.titleCreate= title 
+    .boxInput 
+      label.labelInput(for="name") Name Category: 
+      input#name.inputForm(type="text", name="name" required=true value=(undefined===category ? '' : category.name))
+    .boxInput 
+      label.labelInput(for="description") Description:
+      textarea#description.inputForm(name="description", cols="30", rows="4" required=true) #{undefined===category ? '' : category.description}
+    .boxInput 
+      label.labelInput(for="img") Link image:
+      input#img.inputForm(type="url", name="img" required=true value=(undefined===category ? '' : category.img))
+    button.btn.btnItem(type="submit") Submit

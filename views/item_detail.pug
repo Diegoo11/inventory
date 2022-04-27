@@ -1,0 +1,20 @@
+extends layout 
+
+block content 
+  .boxItem 
+    img.imgItemFocus(src=item.img)
+    .boxText 
+      h2.itemTitle= item.name
+      span.isbn Isbn: #{item.isbn}
+      h3.cost S/. #{item.cost},00
+      span.titleDescription Description:
+      span.description #{item.description}
+      .btnBox 
+        button.btnItem.btn Buy 
+        button.btnItem.btn Add cart
+  button.btn.btnFixedAdd 
+    a.linkFixed(href=item.url + '/update')
+      img.icoEdit(src="/images/edit.png", alt="")
+  button.btn.btnFixedUpdate 
+    a.linkFixed(href=item.url + '/delete')
+      img.icoEdit(src="/images/rubbish-bin.png", alt="")

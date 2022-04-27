@@ -3,6 +3,27 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="/stylesheets/styleCategory.css")
+    link(rel="stylesheet", href="/stylesheets/headerAndSection.css")
+    link(rel="stylesheet", href="/stylesheets/styleItem.css")
     link(rel='stylesheet', href='/stylesheets/styleCategories.css')
+    link(rel="stylesheet", href="/stylesheets/styleForm.css")
+    link(rel="stylesheet", href="/stylesheets/styleDelete.css")
   body
+    header 
+      img.logo-svg(src="/images/vscode.svg", alt="logo")
+      nav 
+        ul.list-ul 
+          li 
+            button
+              a.link(href='/') Home 
+          li 
+            button
+              a.link(href='/home/categories') Categories
+          li 
+            button
+              a.link(href='/home/items') All Shop 
+          li 
+            button
+              a.link(href='') About me         
     block content

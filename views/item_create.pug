@@ -1,0 +1,40 @@
+extends layout 
+
+block content 
+  form.formCategory(action="", method="post") 
+    h2.titleCreate= title 
+    .boxInput 
+      label.labelInput(for="name") Name Item: 
+      input#name.inputForm(type="text", name="name" required=true value=(undefined===item ? '' : item.name))
+    .boxInput 
+      label.labelInput(for="description") Description:
+      textarea#description.inputForm(name="description", cols="30", rows="4" required=true) #{undefined===item ? '' : item.description}
+    .boxInput 
+      label.labelInput(for='category') Category:
+      select#category.inputForm.inputSelect(type='select' placeholder='Select category' name='category' required='true' )
+        if category
+          - category.sort(function(a, b) {let textA = a.name.toUpperCase(); let textB = b.name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+          for cat0 in category
+            if item
+              //- Handle GET form, where book.author is an object, and POST form, where it is a string.
+              option(
+                value=author._id
+                selected=(
+                  author._id.toString()==book.author._id
+                  || author._id.toString()==book.author
+                ) ? 'selected' : false
+              ) #{author.name}
+            else
+              option(value=cat0._id) #{cat0.name}
+        else 
+          option(value='perro') #{item.category.name}
+    .boxInput 
+      label.labelInput(for="cost") Cost: 
+      input#cost.inputForm(type='number', name="cost" required=true value=(undefined===item ? '' : item.cost))
+    .boxInput 
+      label.labelInput(for="isbn") Isbn: 
+      input#isbn.inputForm(type='text', name="isbn" required=true value=(undefined===item ? '' : item.isbn))
+    .boxInput 
+      label.labelInput(for="img") Link image:
+      input#img.inputForm(type="url", name="img" required=true value=(undefined===item ? '' : item.img))
+    button.btn.btnItem(type="submit") Submit

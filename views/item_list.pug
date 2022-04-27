@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  h1.title= title 
+
+  aside.items 
+    each item0 in item
+      article.item
+        a.linkItem(href=item0.url)
+          .boxImg 
+            if item0.img 
+              img.imgItem(src=item0.img, alt="") 
+          .boxPrecio 
+            span S./ #{item0.cost}
+            a.linkItem(href=item0.url) #{item0.name} 
+  button.btn.btnFixedAdd 
+    a.linkFixed(href="/home/item/create") +
+    

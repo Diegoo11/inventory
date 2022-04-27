@@ -1,11 +1,11 @@
 extends layout 
 
 block content 
-  h1= title 
+  h1.title= title 
 
   aside  
     article.category  
-      a.linkCategory(href=category.url)
+      .linkCategory
         img.imgCategory(src=category.img, alt="")
         span.dentro #{category.name}
       div.boxSpanCategory
@@ -13,11 +13,17 @@ block content
 
   aside.items 
     each item in category_items
-      article.item
-        .boxImg 
-          if item.img 
-            img(src=item.img, alt="") 
-        .boxPrecio 
-          span S./ #{item.cost}
-          a.linkItem(href="") #{item.name} 
-    
+      a.linkItem(href=item.url)
+        article.item
+          .boxImg 
+            if item.img 
+              img.imgItem(src=item.img, alt="") 
+          .boxPrecio 
+            span S/. #{item.cost},00
+            a.linkItem(href=item.url) #{item.name} 
+
+  button.btn.btnFixedUpdate
+    a.linkFixed(href=category.url + '/update')
+      img.icoEdit(src="/images/edit.png", alt="")
+  button.btn.btnFixedAdd 
+    a.linkFixed(href="/home/item/create") +

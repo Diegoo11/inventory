@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+  form(action="", method="post").boxRemove 
+    h1= title 
+    span.deleteText Estas seguro que quieres eliminar esta categoria?
+    input#itemid(type='hidden', name="itemid" value=category._id required=true)
+    button(type="submit").btn.btnItem Delete Item
+  aside  
+    article.category  
+      .linkCategory
+        img.imgCategory(src=category.img, alt="")
+        span.dentro #{category.name}
+      div.boxSpanCategory
+        span.spanCategory #{category.description}

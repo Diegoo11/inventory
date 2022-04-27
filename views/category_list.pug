@@ -1,9 +1,9 @@
 extends layout 
 
 block content 
-  h1= title 
+  h1.title= title 
 
-  aside  
+  aside.asideList  
     each category in categories
       article.category  
         a.linkCategory(href=category.url)
@@ -14,3 +14,5 @@ block content
     
     else 
       li No hay Categorias
+  button.btn.btnFixed 
+    a.linkFixed(href="/home/category/create") +

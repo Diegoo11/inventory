@@ -1,0 +1,8 @@
+extends layout 
+
+block content 
+  form(action="", method="post").boxRemove 
+    h1= title 
+    span.deleteText Estas seguro que quieres eliminar este articulo?
+    input#itemid(type='hidden', name="itemid" value=item._id required=true)
+    button(type="submit").btn.btnItem Delete Item
