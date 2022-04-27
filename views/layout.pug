@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= title
+    link(rel="stylesheet", href="/stylesheets/footer.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet", href="/stylesheets/styleCategory.css")
     link(rel="stylesheet", href="/stylesheets/headerAndSection.css")
@@ -25,5 +26,23 @@ html
               a.link(href='/home/items') All Shop 
           li 
             button
-              a.link(href='') About me         
+              a.link(href='/home/contact') About me         
     block content
+
+    footer 
+      .box-footer 
+        h1.title-footer Contact me 
+        span.text-footer Obsecro ut contingas si putas opera tua prodesse posse mutuo! #[br] Arequipa, Arequipa, Peru.
+        span.contact-footer 
+          img.icoContact(src="/images/phone-call.png", alt="phone")
+          |  +51 935761921
+        span.contact-footer 
+          img.icoContact(src="/images/email.png", alt="email")
+          |  ynoacamino@gmail.com
+        .boxLinkImg 
+          a.underline(href="https://github.com/Diegoo11") 
+            img.linkImg(src="/images/github.png", alt="GitHub")
+          a.underline(href="https://www.facebook.com/yenaro.noacamino.56") 
+            img.linkImg(src="/images/facebook.png", alt="Facebook")
+          a.underline(href="https://github.com/Diegoo11") 
+            img.linkImg(src="/images/github.png", alt="GitHub")
