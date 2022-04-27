@@ -137,7 +137,7 @@ exports.category_delete_get = function(req, res, next) {
 exports.category_delete_post = function(req, res, next) {
   async.parallel({
     category: function(callback) {
-      Category.findById(req.body.categoryid)
+      Category.findById(req.body.categoryid).exec(callback)
     },
     category_items: function(callback) {
       Item.find({'category': req.params.id}).exec(callback)
@@ -155,7 +155,7 @@ exports.category_delete_post = function(req, res, next) {
     else {
       Category.findByIdAndRemove(req.body.categoryid, function deleteCategory(err) {
         if(err) {return next(err)}
-        res.redirect('/catalog/categories')
+        res.redirect('/home/categories')
       })
     }
   })
