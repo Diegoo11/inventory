@@ -15,6 +15,7 @@ exports.category_list = function(req, res, next) {
 };
 
 exports.category_detail = function(req, res, next) {
+  console.log(req.params.id)
   async.parallel({
     category: function(callback) {
       Category.findById(req.params.id).exec(callback)
@@ -23,6 +24,8 @@ exports.category_detail = function(req, res, next) {
       Item.find({ 'category': req.params.id }).exec(callback)
     }
   }, function(err, results) {
+    
+    console.log(results.category)
     if(err) {return next(err)}
     if(results === null) {
       const err = new Error('Category not found');
@@ -50,7 +53,8 @@ exports.category_create_post = [
 
     const category = new Category({
       name: req.body.name,
-      description: req.body.description
+      description: req.body.description,
+      img: req.body.img
     })
 
     if(!errors.isEmpty()) {
@@ -89,7 +93,8 @@ exports.category_upgrate_post = [
     const errors = validationResult(req);
     const category = new Category({
       name: req.body.name,
-      description: req.body.name
+      description: req.body.name,
+      _id: req.params.id
     })
 
     if(!errors.isEmpty()) {

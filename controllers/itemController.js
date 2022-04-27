@@ -5,7 +5,7 @@ const { body, validationResult } = require('express-validator');
 const async = require('async');
 
 exports.index = function(req, res, next) {
-  res.send('hola mundo xd')
+  res.render('index')
 };
 
 exports.item_list = function(req, res, next) {
@@ -57,7 +57,8 @@ exports.item_create_post = [
       description: req.body.description,
       cost: req.body.cost,
       isbn: req.body.isbn,
-      category: req.body.category
+      category: req.body.category,
+      img: req.body.img
     })
 
     if(!errors.isEmpty()) {
@@ -110,7 +111,9 @@ exports.item_update_post = [
       description: req.body.description,
       cost: req.body.cost,
       isbn: req.body.isbn,
-      category: req.body.category
+      category: req.body.category,
+      img: req.body.img,
+      _id: req.params.id
     })
 
     if(!errors.isEmpty()) {
@@ -152,6 +155,6 @@ exports.item_delete_get = function(req, res, next) {
 exports.item_delete_post = function(req, res, next) {
   Item.findByIdAndRemove(req.body.itemid, function(err) {
     if(err) {return next(err)};
-    res.redirect('/catalog/items')
+    res.redirect('/home/items')
   })
 };
